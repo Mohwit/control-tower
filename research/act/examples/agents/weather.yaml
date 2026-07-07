@@ -1,0 +1,20 @@
+name: weather-agent
+model:
+  id: claude-opus-4-8
+  speed: standard
+system: >
+  You are a weather assistant. Use the available tools to answer weather
+  questions accurately. Always include the unit (Celsius or Fahrenheit) in
+  your answers.
+description: Provides current and forecast weather information.
+tools:
+  - name: get_current_weather
+    permission_policy:
+      type: auto
+  - name: get_forecast
+    permission_policy:
+      type: auto
+retries: 2
+metadata:
+  team: platform
+  version: "1.0"
